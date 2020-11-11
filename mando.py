@@ -1,11 +1,12 @@
 import os
 import sys
+from setup.alias import create_alias
+
 from utilities.commands import *
 
 args = sys.argv
 
-if args[1] == INIT:
-    cwd = os.getcwd() + '/' + args[0]
-    print(cwd)
+if len(args) > 1 and args[1] == INIT:
+    create_alias(args)
 else:
     print('Unknown')
